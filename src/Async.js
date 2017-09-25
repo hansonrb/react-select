@@ -90,9 +90,11 @@ export default class Async extends Component {
 		) {
 			this._callback = null;
 
-			this.setState({
-				options: cache[inputValue]
-			});
+			if (inputValue !== '') {
+				this.setState({
+					options: cache[inputValue]
+				});
+			}
 
 			return;
 		}
